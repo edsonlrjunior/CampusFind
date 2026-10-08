@@ -1,8 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="980" viewBox="0 0 1700 980">
-<style>text{font-family:Arial,sans-serif;fill:#1d2939}.title{font-size:22px;font-weight:bold}.h{font-size:16px;font-weight:bold}.p{font-size:13px}.screen{fill:#fff;stroke:#9aa4b2;stroke-width:2}.bar{fill:#eaf2ff}.btn{fill:#d7e6ff;stroke:#7c9bc9}.field{fill:#fafafa;stroke:#c8ced8}.card{fill:#fff;stroke:#c8ced8}.tag{fill:#eef2f6;stroke:#b7c0cc}</style>
-<rect width="1700" height="980" fill="#f5f7fa"/><text x="40" y="45" class="title">CampusFind — Wireframes do MVP</text>
-<g transform="translate(40 80)"><rect class="screen" width="500" height="400" rx="8"/><rect class="bar" width="500" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text><text x="320" y="34" class="p">Entrar | Nova publicação</text><text x="22" y="90" class="h">Objetos perdidos e encontrados</text><rect class="field" x="22" y="110" width="300" height="36" rx="5"/><text x="35" y="133" class="p">Buscar por objeto...</text><rect class="field" x="335" y="110" width="140" height="36" rx="5"/><text x="355" y="133" class="p">Todos os tipos</text><rect class="card" x="22" y="165" width="453" height="82" rx="6"/><text x="38" y="190" class="h">Mochila preta</text><text x="38" y="214" class="p">Perdido • Bloco B • 30/09/2026</text><text x="38" y="234" class="p">Detalhes →</text><rect class="card" x="22" y="260" width="453" height="82" rx="6"/><text x="38" y="285" class="h">Chave com chaveiro azul</text><text x="38" y="309" class="p">Encontrado • Biblioteca • 29/09/2026</text><text x="38" y="329" class="p">Detalhes →</text><text x="18" y="390" class="p">Tela: Início / Listagem</text></g>
-<g transform="translate(600 80)"><rect class="screen" width="340" height="400" rx="8"/><rect class="bar" width="340" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text><text x="28" y="105" class="title">Entrar</text><text x="28" y="140" class="p">E-mail</text><rect class="field" x="28" y="150" width="284" height="38" rx="5"/><text x="28" y="220" class="p">Senha</text><rect class="field" x="28" y="230" width="284" height="38" rx="5"/><rect class="btn" x="28" y="295" width="284" height="42" rx="5"/><text x="145" y="321" class="h">Entrar</text><text x="18" y="390" class="p">Tela: Login</text></g>
-<g transform="translate(1000 80)"><rect class="screen" width="650" height="400" rx="8"/><rect class="bar" width="650" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text><text x="22" y="90" class="title">Nova publicação</text><text x="22" y="125" class="p">Tipo</text><rect class="field" x="22" y="136" width="185" height="34" rx="5"/><text x="35" y="158" class="p">Perdido / Encontrado</text><text x="225" y="125" class="p">Categoria</text><rect class="field" x="225" y="136" width="185" height="34" rx="5"/><text x="425" y="125" class="p">Data</text><rect class="field" x="425" y="136" width="200" height="34" rx="5"/><text x="22" y="198" class="p">Título</text><rect class="field" x="22" y="208" width="388" height="34" rx="5"/><text x="425" y="198" class="p">Local</text><rect class="field" x="425" y="208" width="200" height="34" rx="5"/><text x="22" y="270" class="p">Descrição</text><rect class="field" x="22" y="280" width="603" height="55" rx="5"/><rect class="btn" x="455" y="350" width="170" height="34" rx="5"/><text x="490" y="372" class="h">Publicar</text><text x="18" y="390" class="p">Tela: Nova Publicação</text></g>
-<g transform="translate(40 540)"><rect class="screen" width="760" height="390" rx="8"/><rect class="bar" width="760" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text><rect x="25" y="85" width="250" height="220" fill="#eef2f6" stroke="#c8ced8"/><text x="100" y="195" class="p">Imagem do objeto</text><text x="305" y="100" class="title">Mochila preta</text><rect class="tag" x="305" y="118" width="80" height="27" rx="13"/><text x="324" y="137" class="p">PERDIDO</text><text x="305" y="175" class="p">Categoria: Acessórios</text><text x="305" y="205" class="p">Data: 30/09/2026</text><text x="305" y="235" class="p">Local: Bloco B</text><text x="305" y="275" class="p">Descrição: mochila preta com detalhe vermelho.</text><rect class="btn" x="305" y="310" width="220" height="40" rx="5"/><text x="330" y="336" class="h">Ver contato do autor</text><text x="18" y="378" class="p">Tela: Detalhes</text></g>
-<g transform="translate(850 540)"><rect class="screen" width="800" height="390" rx="8"/><rect class="bar" width="800" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text><text x="25" y="95" class="title">Minhas publicações</text><rect class="card" x="25" y="125" width="750" height="90" rx="6"/><text x="42" y="153" class="h">Mochila preta</text><text x="42" y="178" class="p">ATIVA • Perdido • Bloco B</text><rect class="btn" x="565" y="142" width="80" height="34" rx="5"/><text x="586" y="164" class="p">Editar</text><rect class="btn" x="655" y="142" width="105" height="34" rx="5"/><text x="666" y="164" class="p">Resolver</text><rect class="card" x="25" y="232" width="750" height="90" rx="6"/><text x="42" y="260" class="h">Carteira marrom</text><text x="42" y="285" class="p">RESOLVIDA • Encontrado • Biblioteca</text><text x="18" y="378" class="p">Tela: Minhas Publicações</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1460" viewBox="0 0 1700 1460">
+<style>
+text{font-family:Arial,sans-serif;fill:#1d2939}.title{font-size:22px;font-weight:bold}.h{font-size:16px;font-weight:bold}.p{font-size:13px}
+.screen{fill:#fff;stroke:#9aa4b2;stroke-width:2}.bar{fill:#eaf2ff}.btn{fill:#d7e6ff;stroke:#7c9bc9}.field{fill:#fafafa;stroke:#c8ced8}.card{fill:#fff;stroke:#c8ced8}.tag{fill:#eef2f6;stroke:#b7c0cc}
+</style>
+<rect width="1700" height="1460" fill="#f5f7fa"/>
+<text x="40" y="45" class="title">CampusFind — Wireframes do MVP</text>
+
+<g transform="translate(40 80)">
+<rect class="screen" width="530" height="400" rx="8"/><rect class="bar" width="530" height="55" rx="8"/>
+<text x="20" y="34" class="h">CampusFind</text><text x="350" y="34" class="p">Entrar | Nova publicação</text>
+<text x="22" y="90" class="h">Objetos perdidos e encontrados</text>
+<rect class="field" x="22" y="110" width="205" height="36" rx="5"/><text x="35" y="133" class="p">Buscar...</text>
+<rect class="field" x="238" y="110" width="130" height="36" rx="5"/><text x="250" y="133" class="p">Categoria</text>
+<rect class="field" x="378" y="110" width="128" height="36" rx="5"/><text x="390" y="133" class="p">Tipo</text>
+<rect class="card" x="22" y="165" width="484" height="82" rx="6"/><text x="38" y="190" class="h">Mochila preta</text><text x="38" y="214" class="p">Perdido • Acessórios • Bloco B</text><text x="38" y="234" class="p">Detalhes →</text>
+<rect class="card" x="22" y="260" width="484" height="82" rx="6"/><text x="38" y="285" class="h">Chave com chaveiro azul</text><text x="38" y="309" class="p">Encontrado • Outros • Biblioteca</text><text x="38" y="329" class="p">Detalhes →</text>
+<text x="18" y="390" class="p">Tela: Início / Listagem — HU05 e HU06</text>
+</g>
+
+<g transform="translate(610 80)">
+<rect class="screen" width="330" height="400" rx="8"/><rect class="bar" width="330" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text>
+<text x="28" y="105" class="title">Entrar</text><text x="28" y="140" class="p">E-mail</text><rect class="field" x="28" y="150" width="274" height="38" rx="5"/>
+<text x="28" y="220" class="p">Senha</text><rect class="field" x="28" y="230" width="274" height="38" rx="5"/>
+<rect class="btn" x="28" y="295" width="274" height="42" rx="5"/><text x="140" y="321" class="h">Entrar</text><text x="94" y="353" class="p">Criar conta</text>
+<text x="18" y="390" class="p">Tela: Login — HU02</text>
+</g>
+
+<g transform="translate(980 80)">
+<rect class="screen" width="670" height="400" rx="8"/><rect class="bar" width="670" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text>
+<text x="22" y="90" class="title">Nova publicação</text>
+<text x="22" y="125" class="p">Tipo</text><rect class="field" x="22" y="136" width="190" height="34" rx="5"/><text x="35" y="158" class="p">Perdido / Encontrado</text>
+<text x="226" y="125" class="p">Categoria</text><rect class="field" x="226" y="136" width="190" height="34" rx="5"/>
+<text x="430" y="125" class="p">Data</text><rect class="field" x="430" y="136" width="215" height="34" rx="5"/>
+<text x="22" y="198" class="p">Título</text><rect class="field" x="22" y="208" width="394" height="34" rx="5"/>
+<text x="430" y="198" class="p">Local</text><rect class="field" x="430" y="208" width="215" height="34" rx="5"/>
+<text x="22" y="270" class="p">Descrição</text><rect class="field" x="22" y="280" width="623" height="55" rx="5"/>
+<rect class="btn" x="475" y="350" width="170" height="34" rx="5"/><text x="512" y="372" class="h">Publicar</text>
+<text x="18" y="390" class="p">Tela: Nova Publicação — HU03 e HU04</text>
+</g>
+
+<g transform="translate(40 530)">
+<rect class="screen" width="760" height="390" rx="8"/><rect class="bar" width="760" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text>
+<rect x="25" y="85" width="250" height="220" fill="#eef2f6" stroke="#c8ced8"/><text x="100" y="195" class="p">Imagem do objeto</text>
+<text x="305" y="100" class="title">Mochila preta</text><rect class="tag" x="305" y="118" width="80" height="27" rx="13"/><text x="324" y="137" class="p">PERDIDO</text>
+<text x="305" y="175" class="p">Categoria: Acessórios</text><text x="305" y="205" class="p">Data: 30/09/2026</text><text x="305" y="235" class="p">Local: Bloco B</text>
+<text x="305" y="275" class="p">Descrição: mochila preta com detalhe vermelho.</text><rect class="btn" x="305" y="310" width="220" height="40" rx="5"/><text x="330" y="336" class="h">Ver contato do autor</text>
+<text x="18" y="378" class="p">Tela: Detalhes — HU07</text>
+</g>
+
+<g transform="translate(850 530)">
+<rect class="screen" width="800" height="390" rx="8"/><rect class="bar" width="800" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text>
+<text x="25" y="95" class="title">Minhas publicações</text>
+<rect class="card" x="25" y="125" width="750" height="90" rx="6"/><text x="42" y="153" class="h">Mochila preta</text><text x="42" y="178" class="p">ATIVA • Perdido • Bloco B</text>
+<rect class="btn" x="565" y="142" width="80" height="34" rx="5"/><text x="586" y="164" class="p">Editar</text><rect class="btn" x="655" y="142" width="105" height="34" rx="5"/><text x="666" y="164" class="p">Resolver</text>
+<rect class="card" x="25" y="232" width="750" height="90" rx="6"/><text x="42" y="260" class="h">Carteira marrom</text><text x="42" y="285" class="p">RESOLVIDA • Encontrado • Biblioteca</text>
+<text x="18" y="378" class="p">Tela: Minhas Publicações — HU09 e HU10</text>
+</g>
+
+<g transform="translate(40 970)">
+<rect class="screen" width="600" height="420" rx="8"/><rect class="bar" width="600" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text>
+<text x="28" y="95" class="title">Criar conta</text>
+<text x="28" y="130" class="p">Nome *</text><rect class="field" x="28" y="140" width="255" height="36" rx="5"/>
+<text x="315" y="130" class="p">Telefone / Contato *</text><rect class="field" x="315" y="140" width="257" height="36" rx="5"/>
+<text x="28" y="205" class="p">E-mail *</text><rect class="field" x="28" y="215" width="544" height="36" rx="5"/>
+<text x="28" y="280" class="p">Senha *</text><rect class="field" x="28" y="290" width="255" height="36" rx="5"/>
+<text x="315" y="280" class="p">Confirmar senha *</text><rect class="field" x="315" y="290" width="257" height="36" rx="5"/>
+<rect class="btn" x="402" y="350" width="170" height="38" rx="5"/><text x="446" y="374" class="h">Criar conta</text>
+<text x="18" y="410" class="p">Tela: Cadastro — HU01</text>
+</g>
+
+<g transform="translate(690 970)">
+<rect class="screen" width="960" height="420" rx="8"/><rect class="bar" width="960" height="55" rx="8"/><text x="20" y="34" class="h">CampusFind</text>
+<text x="22" y="95" class="title">Editar publicação</text><text x="250" y="95" class="p">Tipo bloqueado após a criação (RN09)</text>
+<text x="22" y="135" class="p">Tipo</text><rect class="field" x="22" y="145" width="205" height="34" rx="5"/><text x="35" y="167" class="p">Perdido (bloqueado)</text>
+<text x="245" y="135" class="p">Categoria</text><rect class="field" x="245" y="145" width="205" height="34" rx="5"/><text x="258" y="167" class="p">Acessórios</text>
+<text x="468" y="135" class="p">Data</text><rect class="field" x="468" y="145" width="205" height="34" rx="5"/><text x="482" y="167" class="p">30/09/2026</text>
+<text x="691" y="135" class="p">Local</text><rect class="field" x="691" y="145" width="245" height="34" rx="5"/><text x="704" y="167" class="p">Bloco B</text>
+<text x="22" y="215" class="p">Título</text><rect class="field" x="22" y="225" width="428" height="34" rx="5"/><text x="35" y="247" class="p">Mochila preta</text>
+<text x="468" y="215" class="p">Descrição</text><rect class="field" x="468" y="225" width="468" height="70" rx="5"/><text x="482" y="249" class="p">Mochila preta com detalhe vermelho...</text>
+<rect class="btn" x="746" y="330" width="190" height="38" rx="5"/><text x="780" y="354" class="h">Salvar alterações</text>
+<text x="18" y="410" class="p">Tela: Editar Publicação — HU08</text>
+</g>
+</svg>
