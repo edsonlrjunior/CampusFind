@@ -71,7 +71,21 @@ Foram registrados três ADRs:
 
 As decisões priorizam simplicidade, baixo custo e facilidade de desenvolvimento, por se tratar de um MVP acadêmico.
 
-## Protótipo
+## Protótipos
+
+### Figma
+
+Foi criado um arquivo completo no Figma com:
+
+- identidade visual;
+- componentes reutilizáveis;
+- 7 telas desktop do MVP;
+- indicação das Histórias de Usuário em cada tela;
+- fluxo de navegação principal.
+
+**Figma:** https://www.figma.com/design/oPyi3VwzQzftKlxjtvyfbe
+
+### Protótipo navegável local
 
 Existe também um protótipo navegável simples em `prototipo/`.
 
@@ -86,4 +100,3 @@ As interações são simuladas e servem para demonstrar o fluxo das principais h
 ## Documentação
 
 A documentação detalhada está na pasta `docs/`.
-
