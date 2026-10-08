@@ -2,7 +2,22 @@
 
 ## Objetivo
 
-Os protótipos representam diretamente as histórias de usuário descritas na documentação de requisitos. Foi preparado um protótipo navegável simples em HTML/CSS/JavaScript, sem integração com banco de dados, apenas para validar fluxo, organização das informações e navegação do MVP.
+Os protótipos representam diretamente as histórias de usuário descritas na documentação de requisitos. Além do protótipo navegável simples em HTML/CSS/JavaScript, foi criado um arquivo no **Figma** com identidade visual, componentes reutilizáveis, as principais telas desktop e o fluxo de navegação do MVP.
+
+## Arquivo no Figma
+
+**CampusFind — MVP de Achados e Perdidos**
+
+https://www.figma.com/design/oPyi3VwzQzftKlxjtvyfbe
+
+O arquivo contém:
+
+- identidade visual do CampusFind;
+- paleta de cores;
+- componentes de botão, input, badge e card;
+- 7 telas desktop;
+- identificação das Histórias de Usuário atendidas por cada tela;
+- quadro com o fluxo de navegação principal.
 
 ## Telas incluídas
 
@@ -68,7 +83,15 @@ Os protótipos representam diretamente as histórias de usuário descritas na do
 | HU09 — Marcar publicação como resolvida | Minhas Publicações |
 | HU10 — Visualizar minhas publicações | Minhas Publicações |
 
-## Arquivos
+## Fluxo principal representado no Figma
+
+- Login → Cadastro → Início
+- Início → Detalhes
+- Início → Nova Publicação → Início
+- Minhas Publicações → Editar Publicação → Minhas Publicações
+- Minhas Publicações → Detalhes
+
+## Arquivos complementares
 
 - Protótipo navegável: `../prototipo/index.html`
 - Wireframes estáticos: `diagramas/wireframes-campusfind.svg`
