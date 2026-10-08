@@ -20,7 +20,7 @@ function home(){
     <div><h1>Achados e Perdidos</h1><p class="muted">Encontre ou registre objetos dentro da universidade.</p></div>
     <a class="btn" href="#new">+ Nova publicação</a>
   </section>
-  <div class="toolbar" style="grid-template-columns:1fr 180px 180px 120px">
+  <div class="toolbar">
     <input id="q" class="input" placeholder="Buscar por objeto...">
     <select id="cat" class="select">
       <option>Todas as categorias</option>
