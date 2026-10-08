@@ -1,0 +1,45 @@
+digraph DER {
+  graph [rankdir=LR, bgcolor="white", nodesep=0.8, ranksep=1.1, fontname="Arial"];
+  node [shape=plaintext, fontname="Arial"];
+  edge [fontname="Arial", fontsize=10];
+
+  usuario [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD BGCOLOR="#EAF2FF"><B>USUARIO</B></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> id : UUID</TD></TR>
+      <TR><TD ALIGN="LEFT">nome : varchar(120)</TD></TR>
+      <TR><TD ALIGN="LEFT">email : varchar(160) UNIQUE</TD></TR>
+      <TR><TD ALIGN="LEFT">telefone : varchar(20)</TD></TR>
+      <TR><TD ALIGN="LEFT">criado_em : timestamp</TD></TR>
+    </TABLE>
+  >];
+
+  categoria [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD BGCOLOR="#EAF2FF"><B>CATEGORIA</B></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> id : integer</TD></TR>
+      <TR><TD ALIGN="LEFT">nome : varchar(60) UNIQUE</TD></TR>
+    </TABLE>
+  >];
+
+  publicacao [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD BGCOLOR="#EAF2FF"><B>PUBLICACAO</B></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> id : UUID</TD></TR>
+      <TR><TD ALIGN="LEFT"><B>FK</B> usuario_id : UUID</TD></TR>
+      <TR><TD ALIGN="LEFT"><B>FK</B> categoria_id : integer</TD></TR>
+      <TR><TD ALIGN="LEFT">tipo : varchar(10)</TD></TR>
+      <TR><TD ALIGN="LEFT">titulo : varchar(120)</TD></TR>
+      <TR><TD ALIGN="LEFT">descricao : text</TD></TR>
+      <TR><TD ALIGN="LEFT">data_ocorrido : date</TD></TR>
+      <TR><TD ALIGN="LEFT">local : varchar(160)</TD></TR>
+      <TR><TD ALIGN="LEFT">imagem_url : text</TD></TR>
+      <TR><TD ALIGN="LEFT">status : varchar(10)</TD></TR>
+      <TR><TD ALIGN="LEFT">criado_em : timestamp</TD></TR>
+      <TR><TD ALIGN="LEFT">atualizado_em : timestamp</TD></TR>
+    </TABLE>
+  >];
+
+  usuario -> publicacao [label="1     cria     N", arrowhead=none];
+  categoria -> publicacao [label="1  classifica  N", arrowhead=none];
+}
