@@ -81,4 +81,7 @@ erDiagram
     }
 ```
 
-Também foram gerados os arquivos `der-campusfind.png`, `der-campusfind.svg` e `der-campusfind.dot` na pasta `docs/diagramas/`.
+Os arquivos visuais e editáveis do DER estão disponíveis em `docs/diagramas/`:
+
+- `der-campusfind.svg`
+- `der-campusfind.dot`
