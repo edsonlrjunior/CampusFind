@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { Link } from '../lib/router.jsx';
 import { loginPath } from '../lib/authRedirect.js';
+import { useAuthCooldown } from '../lib/useAuthCooldown.js';
 import { toast } from '../lib/toast.js';
 import { LIMITS, SENHA_MIN, formatTelefone, hasErrors, validateSignup } from '../lib/validation.js';
 import Field from '../components/Field.jsx';
@@ -15,6 +16,8 @@ export default function Signup({ next }) {
   const [busy, setBusy] = useState(false);
   const [confirmEmail, setConfirmEmail] = useState('');
   const formRef = useRef(null);
+  const submitting = useRef(false);
+  const { remaining, startCooldown } = useAuthCooldown('signup');
 
   const set = (k, transform = (x) => x) => (e) => {
     setValues({ ...values, [k]: transform(e.target.value) });
@@ -23,6 +26,7 @@ export default function Signup({ next }) {
 
   async function onSubmit(e) {
     e.preventDefault();
+    if (busy || submitting.current || remaining > 0) return;
     setFormError('');
     const errs = validateSignup(values);
     setErrors(errs);
@@ -30,6 +34,7 @@ export default function Signup({ next }) {
       requestAnimationFrame(() => formRef.current?.querySelector('[aria-invalid="true"]')?.focus());
       return;
     }
+    submitting.current = true;
     setBusy(true);
     try {
       const result = await signUp(values);
@@ -39,9 +44,11 @@ export default function Signup({ next }) {
       }
       toast('Conta criada. Você já pode publicar.');
     } catch (err) {
+      startCooldown(err.cooldownSeconds);
       if (err.field) setErrors({ [err.field]: err.message });
       else setFormError(err.message);
     } finally {
+      submitting.current = false;
       setBusy(false);
     }
   }
@@ -61,6 +68,7 @@ export default function Signup({ next }) {
       <h1>Criar conta</h1>
       <p className="lead">Seu telefone e e-mail aparecem para usuários cadastrados nas suas publicações, para que possam falar com você.</p>
       {formError && <div className="alert alert-error" role="alert">{formError}</div>}
+      {remaining > 0 && <p className="hint" role="status">Aguarde {remaining} segundos antes de tentar novamente.</p>}
       <form ref={formRef} onSubmit={onSubmit} noValidate>
         <div className="grid-2">
           <Field id="nome" label="Nome" required error={errors.nome}>
@@ -83,9 +91,10 @@ export default function Signup({ next }) {
         </div>
         <div className="form-actions">
           <Link to={loginPath(next)} className="btn btn-secondary">Cancelar</Link>
-          <button type="submit" className="btn btn-primary" disabled={busy}>{busy ? 'Criando conta…' : 'Criar conta'}</button>
+          <button type="submit" className="btn btn-primary" disabled={busy || remaining > 0}>{busy ? 'Criando conta…' : remaining > 0 ? `Tentar novamente em ${remaining} s` : 'Criar conta'}</button>
         </div>
       </form>
+      <p className="auth-switch">Já tem uma conta? <Link to={loginPath(next)}>Entrar</Link></p>
     </div>
   );
 }

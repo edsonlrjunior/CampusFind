@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext.jsx";
 import { Link } from "../lib/router.jsx";
 import { authDestination } from "../lib/authRedirect.js";
+import { useAuthCooldown } from "../lib/useAuthCooldown.js";
 import { toast } from "../lib/toast.js";
 import { hasErrors, validateLogin } from "../lib/validation.js";
 import Field from "../components/Field.jsx";
@@ -13,20 +14,27 @@ export default function Login({ next }) {
 	const [errors, setErrors] = useState({});
 	const [formError, setFormError] = useState("");
 	const [busy, setBusy] = useState(false);
+	const submitting = useRef(false);
+	const { remaining, startCooldown } = useAuthCooldown('login');
 
 	async function onSubmit(e) {
 		e.preventDefault();
+		if (busy || submitting.current || remaining > 0) return;
 		setFormError("");
 		const errs = validateLogin(values);
 		setErrors(errs);
 		if (hasErrors(errs)) return;
+		submitting.current = true;
 		setBusy(true);
 		try {
 			const u = await signIn(values);
 			toast(`Bem-vindo, ${u.nome.split(" ")[0]}!`);
 		} catch (err) {
+			startCooldown(err.cooldownSeconds);
 			setFormError(err.message);
 			setBusy(false);
+		} finally {
+			submitting.current = false;
 		}
 	}
 
@@ -43,6 +51,7 @@ export default function Login({ next }) {
 					{formError}
 				</div>
 			)}
+			{remaining > 0 && <p className="hint" role="status">Aguarde {remaining} segundos antes de tentar novamente.</p>}
 			<form onSubmit={onSubmit} noValidate>
 				<Field id="email" label="E-mail" error={errors.email}>
 					{(a) => (
@@ -71,8 +80,8 @@ export default function Login({ next }) {
 				<button
 					type="submit"
 					className="btn btn-primary btn-block"
-					disabled={busy}>
-					{busy ? "Entrando…" : "Entrar"}
+					disabled={busy || remaining > 0}>
+					{busy ? "Entrando…" : remaining > 0 ? `Tentar novamente em ${remaining} s` : "Entrar"}
 				</button>
 			</form>
 			<p className="auth-switch">

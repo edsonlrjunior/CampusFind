@@ -35,6 +35,20 @@ function fail(error, fallback = 'Não foi possível concluir a operação. Tente
   throw new Error(fallback);
 }
 
+function authRateLimit(error) {
+  const emailLimit = error.code === 'over_email_send_rate_limit' || /email rate limit exceeded/i.test(error.message ?? '');
+  if (!emailLimit && error.code !== 'over_request_rate_limit' && error.status !== 429) return null;
+  const message = emailLimit
+    ? 'O limite de envio de e-mails foi atingido. Você pode tentar novamente ou entrar com uma conta existente.'
+    : 'Muitas tentativas em pouco tempo. Aguarde antes de tentar novamente.';
+  const result = new Error(message);
+  result.code = emailLimit ? 'over_email_send_rate_limit' : 'over_request_rate_limit';
+  // Uma falha no envio de email não impõe bloqueio local de autenticação.
+  // A pausa só se aplica ao limite de requisições de autenticação.
+  result.cooldownSeconds = emailLimit ? 0 : 60;
+  return result;
+}
+
 export function createSupabaseBackend(url, anonKey) {
   const sb = createClient(url, anonKey, {
     auth: { persistSession: true, autoRefreshToken: true },
@@ -99,6 +113,8 @@ export function createSupabaseBackend(url, anonKey) {
         options: { data: { nome: nome.trim(), telefone: telefone.trim() } },
       });
       if (error) {
+        const rateLimit = authRateLimit(error);
+        if (rateLimit) throw rateLimit;
         if (/already|registered|exists/i.test(error.message)) {
           const e = new Error('Este e-mail já está cadastrado.');
           e.field = 'email';
@@ -123,6 +139,8 @@ export function createSupabaseBackend(url, anonKey) {
     async signIn({ email, senha }) {
       const { data, error } = await sb.auth.signInWithPassword({ email: email.trim().toLowerCase(), password: senha });
       if (error) {
+        const rateLimit = authRateLimit(error);
+        if (rateLimit) throw rateLimit;
         if (/confirm/i.test(error.message)) throw new Error('Confirme seu e-mail antes de entrar.');
         throw new Error('E-mail ou senha inválidos.'); // HU02: não revela qual credencial está errada
       }
