@@ -95,7 +95,11 @@ export default function PostForm({ initial, isEdit = false, submitLabel, onSubmi
                 aria-invalid={errors.tipo ? 'true' : undefined}
               />
               <span className="tipo-title">{TIPO_LABEL[t]}</span>
-              <span className="tipo-desc">{t === 'PERDIDO' ? 'Perdi um objeto e estou procurando' : 'Achei um objeto e quero devolver'}</span>
+              <span className="tipo-desc">
+                {t === 'PERDIDO'
+                  ? 'Estou procurando um objeto que perdi.'
+                  : 'Encontrei um objeto e quero devolvê-lo.'}
+              </span>
             </label>
           ))}
         </div>

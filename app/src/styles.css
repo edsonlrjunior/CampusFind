@@ -204,13 +204,16 @@ fieldset.field { border: 0; padding: 0; }
 
 /* Tipo: Perdido / Encontrado */
 .tipo-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.tipo-option {
-  position: relative; display: grid; gap: 2px; padding: 14px 16px 14px 44px;
+.field .tipo-option {
+  position: relative; display: grid; align-content: start; gap: 4px; padding: 14px 16px 14px 44px;
   border: 2px solid var(--border); border-radius: var(--radius); background: var(--surface); cursor: pointer;
 }
 .tipo-option input { position: absolute; left: 16px; top: 17px; width: 18px; height: 18px; margin: 0; accent-color: var(--brand); }
-.tipo-title { font-weight: 700; }
-.tipo-desc { color: var(--muted); font-size: 0.9rem; }
+.tipo-title { display: block; font-weight: 700; line-height: 1.3; }
+.tipo-desc {
+  display: block; color: var(--muted); font-size: 0.9rem;
+  font-weight: 400; line-height: 1.5; overflow-wrap: break-word;
+}
 .tipo-option.tipo-lost.checked { border-color: var(--lost-edge); background: var(--lost-bg); }
 .tipo-option.tipo-found.checked { border-color: var(--found-edge); background: var(--found-bg); }
 .tipo-option.checked .tipo-title { color: inherit; }
