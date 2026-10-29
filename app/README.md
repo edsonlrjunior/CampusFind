@@ -11,10 +11,16 @@ cd app
 npm install
 npm run dev        # http://localhost:5173
 npm test           # testes unitários (Vitest)
+npm run test:browser # testes de login e redirecionamento em navegador headless
 npm run build      # gera dist/
 ```
 
 Sem o arquivo `.env.local`, o app abre em **modo demonstração**: dados de exemplo salvos no navegador e a conta `demo@campusfind.app` / `demo1234`. Ótimo para apresentar e testar sem configurar nada.
+
+Os testes de navegador exigem Node.js 22 ou superior e usam dados de demonstração isolados, sem acessar o Supabase,
+mesmo quando as variáveis de ambiente estão configuradas. Eles detectam Edge/Chrome
+nos caminhos usuais do Windows e Chromium/Chrome no Linux; para outro caminho,
+defina `CHROME_BIN` com o executável do navegador.
 
 ## Conectar ao Supabase
 

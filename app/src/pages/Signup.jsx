@@ -1,11 +1,10 @@
 import { useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
-import { Link, navigate } from '../lib/router.jsx';
+import { Link } from '../lib/router.jsx';
+import { loginPath } from '../lib/authRedirect.js';
 import { toast } from '../lib/toast.js';
 import { LIMITS, SENHA_MIN, formatTelefone, hasErrors, validateSignup } from '../lib/validation.js';
 import Field from '../components/Field.jsx';
-
-const safeNext = (n) => (n && n.startsWith('/') && !n.startsWith('//') ? n : '/');
 
 // HU01 — Criar conta (RF01, RN11, RN12)
 export default function Signup({ next }) {
@@ -39,7 +38,6 @@ export default function Signup({ next }) {
         return;
       }
       toast('Conta criada. Você já pode publicar.');
-      navigate(safeNext(next), { replace: true });
     } catch (err) {
       if (err.field) setErrors({ [err.field]: err.message });
       else setFormError(err.message);
@@ -53,7 +51,7 @@ export default function Signup({ next }) {
       <div className="auth-card">
         <h1>Confirme seu e-mail</h1>
         <p>Enviamos um link de confirmação para <strong>{confirmEmail}</strong>. Depois de confirmar, volte e entre com sua senha.</p>
-        <Link to="/entrar" className="btn btn-primary btn-block">Ir para Entrar</Link>
+        <Link to={loginPath(next)} className="btn btn-primary btn-block">Ir para Entrar</Link>
       </div>
     );
   }
@@ -84,7 +82,7 @@ export default function Signup({ next }) {
           </Field>
         </div>
         <div className="form-actions">
-          <Link to="/entrar" className="btn btn-secondary">Cancelar</Link>
+          <Link to={loginPath(next)} className="btn btn-secondary">Cancelar</Link>
           <button type="submit" className="btn btn-primary" disabled={busy}>{busy ? 'Criando conta…' : 'Criar conta'}</button>
         </div>
       </form>

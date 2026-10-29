@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext.jsx";
-import { Link, navigate } from "../lib/router.jsx";
+import { Link } from "../lib/router.jsx";
+import { authDestination } from "../lib/authRedirect.js";
 import { toast } from "../lib/toast.js";
 import { hasErrors, validateLogin } from "../lib/validation.js";
 import Field from "../components/Field.jsx";
-
-const safeNext = (n) =>
-	n && n.startsWith("/") && !n.startsWith("//") ? n : "/";
 
 // HU02 — Entrar no sistema
 export default function Login({ next }) {
@@ -26,7 +24,6 @@ export default function Login({ next }) {
 		try {
 			const u = await signIn(values);
 			toast(`Bem-vindo, ${u.nome.split(" ")[0]}!`);
-			navigate(safeNext(next), { replace: true });
 		} catch (err) {
 			setFormError(err.message);
 			setBusy(false);
@@ -82,7 +79,7 @@ export default function Login({ next }) {
 				Ainda não tem conta?{" "}
 				<Link
 					to={
-						next ? `/cadastro?next=${encodeURIComponent(next)}` : "/cadastro"
+						next ? `/cadastro?next=${encodeURIComponent(authDestination(next))}` : "/cadastro"
 					}>
 					Criar conta
 				</Link>

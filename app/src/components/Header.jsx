@@ -1,6 +1,7 @@
 import { Link, navigate } from '../lib/router.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import { toast } from '../lib/toast.js';
+import { loginPath } from '../lib/authRedirect.js';
 
 function NavLink({ to, path, children }) {
   const active = to === '/' ? path === '/' : path.startsWith(to);
@@ -11,7 +12,7 @@ function NavLink({ to, path, children }) {
   );
 }
 
-export default function Header({ path }) {
+export default function Header({ path, returnTo = path }) {
   const { user, signOut } = useAuth();
 
   async function handleSignOut() {
@@ -42,7 +43,7 @@ export default function Header({ path }) {
               <button type="button" className="btn btn-ghost btn-sm" onClick={handleSignOut}>Sair</button>
             </>
           ) : (
-            <Link to="/entrar" className="btn btn-secondary btn-sm">Entrar</Link>
+            <Link to={loginPath(returnTo)} className="btn btn-secondary btn-sm">Entrar</Link>
           )}
         </div>
       </div>
