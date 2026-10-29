@@ -2,7 +2,11 @@
 
 ## Objetivo
 
-Os protótipos representam diretamente as histórias de usuário descritas na documentação de requisitos. Além do protótipo navegável simples em HTML/CSS/JavaScript, foi criado um arquivo no **Figma** com identidade visual, componentes reutilizáveis, as principais telas desktop e o fluxo de navegação do MVP.
+Os protótipos representam diretamente as histórias de usuário descritas na
+documentação de requisitos. Além do protótipo navegável simples em
+HTML/CSS/JavaScript, foi criado um arquivo no **Figma** com identidade visual,
+componentes reutilizáveis, as principais telas desktop e o fluxo de navegação do
+MVP.
 
 ## Arquivo no Figma
 
@@ -70,18 +74,18 @@ O arquivo contém:
 
 ## Rastreabilidade entre histórias e telas
 
-| História de Usuário | Tela que representa o fluxo |
-|---|---|
-| HU01 — Criar conta | Cadastro |
-| HU02 — Entrar no sistema | Login |
-| HU03 — Publicar objeto perdido | Nova Publicação |
-| HU04 — Publicar objeto encontrado | Nova Publicação |
-| HU05 — Consultar publicações | Início / Listagem |
-| HU06 — Pesquisar e filtrar | Início / Listagem |
-| HU07 — Ver detalhes e contato | Detalhes da Publicação |
-| HU08 — Editar minha publicação | Editar Publicação |
-| HU09 — Marcar publicação como resolvida | Minhas Publicações |
-| HU10 — Visualizar minhas publicações | Minhas Publicações |
+| História de Usuário                     | Tela que representa o fluxo |
+| --------------------------------------- | --------------------------- |
+| HU01 — Criar conta                      | Cadastro                    |
+| HU02 — Entrar no sistema                | Login                       |
+| HU03 — Publicar Objeto perdido          | Nova Publicação             |
+| HU04 — Publicar Objeto encontrado       | Nova Publicação             |
+| HU05 — Consultar publicações            | Início / Listagem           |
+| HU06 — Pesquisar e filtrar              | Início / Listagem           |
+| HU07 — Ver detalhes e contato           | Detalhes da Publicação      |
+| HU08 — Editar minha publicação          | Editar Publicação           |
+| HU09 — Marcar publicação como resolvida | Minhas Publicações          |
+| HU10 — Visualizar minhas publicações    | Minhas Publicações          |
 
 ## Fluxo principal representado no Figma
 
@@ -98,4 +102,6 @@ O arquivo contém:
 
 ## Observação
 
-O protótipo não representa o código final do produto. Ele serve para validar visualmente os fluxos antes da implementação real. As ações de autenticação, cadastro, edição e alteração de status são simuladas.
+O protótipo não representa o código final do produto. Ele serve para validar
+visualmente os fluxos antes da implementação real. As ações de autenticação,
+cadastro, edição e alteração de status são simuladas.

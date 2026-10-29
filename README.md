@@ -1,8 +1,10 @@
 # CampusFind
 
-**CampusFind** é um MVP acadêmico de um sistema de **achados e perdidos para o ambiente universitário**.
+**CampusFind** é um MVP acadêmico de um sistema de **achados e perdidos para o
+ambiente universitário**.
 
-A proposta é centralizar publicações de objetos perdidos e encontrados para facilitar a comunicação entre quem perdeu e quem encontrou um objeto.
+A proposta é centralizar publicações de objetos perdidos e encontrados para
+facilitar a comunicação entre quem perdeu e quem encontrou um objeto.
 
 ## Equipe
 
@@ -12,17 +14,22 @@ A proposta é centralizar publicações de objetos perdidos e encontrados para f
 
 ## Status
 
-O MVP está **implementado** em `app/` (React + Vite) com banco em `supabase/` (PostgreSQL, RLS e storage). Veja o [plano de desenvolvimento](docs/05-plano-desenvolvimento-mvp.md) e o [guia de execução e deploy](app/README.md).
+O MVP está **implementado** em `app/` (React + Vite) com banco em `supabase/`
+(PostgreSQL, RLS e storage). Veja o
+[plano de desenvolvimento](docs/05-plano-desenvolvimento-mvp.md) e o
+[guia de execução e deploy](app/README.md).
 
 ```bash
 cd app && npm install && npm run dev
 ```
 
-Sem configurar o Supabase, o app abre em modo demonstração (conta `demo@campusfind.app` / `demo1234`).
+Sem configurar o Supabase, o app abre em modo demonstração (conta
+`demo@campusfind.app` / `demo1234`).
 
 ## Objetivo da Parte 2
 
-Transformar a ideia conceitual do MVP em uma documentação técnica estruturada, cobrindo:
+Transformar a ideia conceitual do MVP em uma documentação técnica estruturada,
+cobrindo:
 
 - requisitos funcionais;
 - histórias de usuário e critérios de aceite;
@@ -83,9 +90,11 @@ Foram registrados quatro ADRs:
 1. **ADR-001 — Front-end:** React + Vite.
 2. **ADR-002 — Banco e autenticação:** Supabase + PostgreSQL.
 3. **ADR-003 — Hospedagem:** Vercel.
-4. **ADR-004 — Roteamento por hash e modo demonstração** (decisões da implementação).
+4. **ADR-004 — Roteamento por hash e modo demonstração** (decisões da
+   implementação).
 
-As decisões priorizam simplicidade, baixo custo e facilidade de desenvolvimento, por se tratar de um MVP acadêmico.
+As decisões priorizam simplicidade, baixo custo e facilidade de desenvolvimento,
+por se tratar de um MVP acadêmico.
 
 ## Protótipos
 
@@ -111,7 +120,8 @@ Para visualizar localmente, basta abrir:
 prototipo/index.html
 ```
 
-As interações são simuladas e servem para demonstrar o fluxo das principais histórias de usuário.
+As interações são simuladas e servem para demonstrar o fluxo das principais
+histórias de usuário.
 
 ## Documentação
 
