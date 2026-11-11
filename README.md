@@ -126,3 +126,6 @@ histórias de usuário.
 ## Documentação
 
 A documentação detalhada está na pasta `docs/`.
+
+A auditoria do MVP está no [relatório OWASP Top 10:2025](docs/06-relatorio-seguranca-owasp-2025.md),
+com [correções, testes e instruções de aplicação](docs/07-correcoes-seguranca.md).

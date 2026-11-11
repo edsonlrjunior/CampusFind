@@ -212,8 +212,9 @@ export function createLocalBackend() {
     },
 
     async getContato(usuarioId) {
-      await requireUser(); // contato só para autenticados
+      const viewer = await requireUser(); // contato só para autenticados
       const d = await db();
+      if (usuarioId !== viewer.id && !d.posts.some((p) => p.usuarioId === usuarioId && p.status === 'ATIVA')) return null;
       const u = d.users.find((x) => x.id === usuarioId);
       return u ? { nome: u.nome, email: u.email, telefone: u.telefone } : null;
     },
