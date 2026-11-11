@@ -4,18 +4,18 @@ SPA em React + Vite (ADR-001) com Supabase (ADR-002), pronta para a Vercel (ADR-
 
 ## Rodar localmente
 
-Requer Node.js 18 ou superior.
+Requer Node.js 22.12 ou superior na linha 22, ou Node.js 24 ou superior.
 
 ```bash
 cd app
-npm install
+npm ci
 npm run dev        # http://localhost:5173
 npm test           # testes unitários (Vitest)
 npm run test:browser # testes de login e redirecionamento em navegador headless
 npm run build      # gera dist/
 ```
 
-Sem o arquivo `.env.local`, o app abre em **modo demonstração**: dados de exemplo salvos no navegador e a conta `demo@campusfind.app` / `demo1234`. Ótimo para apresentar e testar sem configurar nada.
+Em desenvolvimento, sem as duas variáveis do Supabase, o app abre em **modo demonstração**: dados fictícios salvos no navegador e a conta `demo@campusfind.app` / `demo1234`. Não use dados pessoais ou senhas reais. Configuração parcial é rejeitada. Em produção, o app exige Supabase ou a opção explícita `VITE_DEMO_MODE=true` com ambas as credenciais ausentes.
 
 Os testes de navegador exigem Node.js 22 ou superior e usam dados de demonstração isolados, sem acessar o Supabase,
 mesmo quando as variáveis de ambiente estão configuradas. Eles detectam Edge/Chrome
@@ -28,6 +28,7 @@ defina `CHROME_BIN` com o executável do navegador.
 2. No **SQL Editor**, execute, nesta ordem:
    - `supabase/migrations/001_schema.sql`
    - `supabase/migrations/002_seed_categorias.sql`
+   - `supabase/migrations/003_security_hardening.sql`
 3. Em **Authentication > Sign In / Providers > Email**, desative **Confirm email**
    e salve. O cadastro deve criar a conta e iniciar a sessão sem envio de e-mail;
    o login usa e-mail e senha. Essa configuração remota é necessária para que a
@@ -83,6 +84,22 @@ Referências: [testes de autenticação](https://supabase.com/docs/guides/auth/t
 4. Faça o deploy. Cada push na branch principal gera uma nova versão.
 
 O `vercel.json` já define o build e cabeçalhos de segurança (HSTS, `nosniff`, `X-Frame-Options`). Como as rotas usam `#`, não é preciso configurar reescritas.
+
+Também foram adicionadas CSP e Permissions-Policy. A CSP permite o Supabase em
+`*.supabase.co` e as fontes Google usadas pelo projeto. Se usar domínio próprio
+para o Supabase, ajuste `connect-src` e `img-src` para a origem exata.
+Confira os cabeçalhos na hospedagem após o deploy; `vite preview` não aplica
+automaticamente os cabeçalhos do arquivo Vercel.
+
+O cadastro sem confirmação de email descrito acima é uma escolha do MVP acadêmico.
+Para uso com pessoas reais, configure confirmação de posse de email e SMTP,
+limites de autenticação no servidor e monitoração no Supabase. Não trate a
+pausa visual do formulário como controle contra força bruta.
+
+## Auditoria de segurança
+
+Veja o [relatório OWASP Top 10:2025](../docs/06-relatorio-seguranca-owasp-2025.md)
+e o [registro das correções e validação](../docs/07-correcoes-seguranca.md).
 
 ## Rotas
 
